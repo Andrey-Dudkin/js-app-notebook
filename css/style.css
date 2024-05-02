@@ -1,0 +1,299 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+*::before,*::after{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #e88eb7;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.note_app {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+.title::before{
+    position: relative;
+    top: 20px;
+    right: 20px;
+    content: "";
+    display: inline-block;
+    width: 92px;
+    height: 92px;
+    background: url("../icons/pencil.png") no-repeat;
+    background-size: contain;
+}
+.title {
+    font-size: 60px;
+    color: #ffffff;
+    text-align: center; 
+}
+.paper{
+    position: relative;
+    background: #fff;
+    box-shadow:
+    /* Тень верхнего слоя */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* Второй слой */
+    0 10px 0 -5px #eee,
+    /* Тень второго слоя */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    /* Третий слой */
+    0 20px 0 -10px #eee,
+    /* Тень третьего слоя */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Отступ для демо */
+    padding: 30px;
+    margin-top: 30px;
+}
+.user_interface{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+.buttons_filter{
+    display: flex;
+    column-gap: 15px;
+    
+}
+.btn_filter{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.btn_filter:hover{
+    background-color: #eaeaea;
+}
+.btn_filter:active{
+    background-color: #d1d1d1;
+}
+.btn_filter_active{
+    color: #000000;
+    background-color: #d9d9d9;
+}
+.forma_note{
+    position: relative;
+    display: flex;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    row-gap: 5px;
+}
+.input_note{
+    outline: none;
+    border: none;
+    width: 550px;
+    height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+    border-bottom: 2px solid #bdb7b7;
+}
+.error{
+    position: absolute;
+    top: 40px;
+    font-size: 15px;
+    color: #ff0000;
+    display: none;
+}
+.error_active{
+    display: block;
+}
+.btn_add_note{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn_add_note:hover{
+    background-color: #eaeaea;
+}
+.btn_add_note:active{
+    background-color: #d1d1d1;
+}
+.search{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    border-bottom: 2px solid #b7babd;
+}
+.note_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: transparent;
+    padding: 15px;
+    margin-top: 15px;
+}
+.note{
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(244, 244, 244, 0.8);
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+}
+.note_text{
+    width: 1000px;
+    font-size: 30px;
+    overflow-wrap: break-word;
+}
+.note_text_done{
+    font-size: 30px;
+    color: #b7babd;
+    text-decoration: line-through;
+}
+.buttins_note{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    display: none;
+}
+.btn_edit,
+.btn_status,
+.btn_delete{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+}
+.btn_status img,
+.btn_edit img,
+.btn_delete img{
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+}
+.edit_note{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+.edit_input{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    border-bottom: 2px solid #b7babd;
+}
+.btn_save_note{
+    position: absolute;
+    left: 250px;
+    bottom: 5px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.btn_save_note:hover{
+    background-color: #eaeaea;
+}
+.btn_save_note:active{
+    background-color: #d1d1d1;
+}
+.note:hover .buttins_note{
+    display: flex;
+}
+.hidenn{
+    display: none;
+}
+/* * Медиа запросы */
+
+@media(max-width: 769px){
+    .title::before{
+        width: 72px;
+        height: 72px;
+    }
+    .title{
+        font-size: 40px;
+    }
+    .buttins_note{
+        display: flex;
+    }
+    .btn_edit img{
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+    }
+    .btn_status img,
+    .btn_delete img{
+        width: 14px;
+        height: 14px;
+    }
+
+}
+@media(max-width: 650px){
+    .note_app{
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+    .btn_filter{
+        font-size: 14px;
+    }
+    .input_note{
+        width: 350px;
+        font-size: 14px;
+    }
+    .edit_input{
+        width: 150px;
+    }
+
+    .btn_add_note{
+        font-size: 14px;
+    }
+    .btn_save_note{
+        font-size: 14px;
+        left: 230px;
+    }
+}
+@media(max-width: 525px){
+    .title::before{
+        width: 52px;
+        height: 52px;
+    }
+    .title{
+        font-size: 30px;
+    }
+    .user_interface{
+        margin-top: 10px;
+    }
+    .note_text{
+        font-size: 20px;
+    }
+}
